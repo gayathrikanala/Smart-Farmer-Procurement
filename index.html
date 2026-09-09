@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farmer Procurement System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="logo">
+            🌾 <span>Smart Farmer</span>
+        </div>
+
+        <div class="language">
+            <button onclick="changeLanguage('en')">English</button>
+            <button onclick="changeLanguage('te')">తెలుగు</button>
+            <button onclick="changeLanguage('hi')">हिन्दी</button>
+        </div>
+    </header>
+
+
+    <!-- ================= HOME PAGE ================= -->
+    <section id="homePage" class="page active">
+
+        <div class="hero">
+
+            <div class="hero-icon">🌾</div>
+
+            <h1>Smart Farmer Procurement System</h1>
+
+            <p id="welcomeText">
+                Less Waiting. More Transparency. Smarter Procurement.
+            </p>
+
+            <button class="voice-button" onclick="speakWelcome()">
+                🎤 <span id="voiceText">Voice Assistance</span>
+            </button>
+
+        </div>
+
+
+        <h2 id="selectPortal">Select Your Portal</h2>
+
+        <div class="portal-container">
+
+            <button class="portal-card farmer"
+                    onclick="showPage('farmerLogin')">
+
+                <div class="big-icon">👨‍🌾</div>
+
+                <h2>Farmer</h2>
+
+                <p>Book Token & Track Procurement</p>
+
+            </button>
+
+
+            <button class="portal-card voice-call"
+                    onclick="showPage('voiceCallPage')">
+                <div class="big-icon">📞</div>
+                <h2>Voice Call</h2>
+                <p>Call and speak in your language</p>
+            </button>
+
+            <button class="portal-card staff"
+                    onclick="showPage('staffLogin')">
+
+                <div class="big-icon">👨‍💼</div>
+
+                <h2>Centre Staff</h2>
+
+                <p>Manage Queue & Procurement</p>
+
+            </button>
+
+
+            <button class="portal-card admin"
+                    onclick="showPage('adminLogin')">
+
+                <div class="big-icon">🛡️</div>
+
+                <h2>Admin</h2>
+
+                <p>Monitor Centres & Reports</p>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FARMER LOGIN ================= -->
+
+    <section id="farmerLogin" class="page">
+
+        <div class="login-box">
+
+            <div class="big-icon">👨‍🌾</div>
+
+            <h1>Farmer Login</h1>
+
+            <p>Enter your mobile number</p>
+
+            <input
+                type="tel"
+                id="farmerMobile"
+                placeholder="Mobile Number"
+                maxlength="10"
+            >
+
+            <button class="main-button" onclick="farmerLogin()">
+                🎤 Login
+            </button>
+
+            <button class="back-button" onclick="showPage('homePage')">
+                ← Back
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FARMER DASHBOARD ================= -->
+
+    <section id="farmerDashboard" class="page">
+
+        <div class="dashboard-header">
+
+            <div>
+                <h1>👨‍🌾 Farmer Dashboard</h1>
+                <p id="farmerGreeting">Welcome, Farmer!</p>
+            </div>
+
+            <button class="voice-small" onclick="speakDashboard()">
+                🎤
+            </button>
+
+        </div>
+
+
+        <div class="dashboard-grid">
+            <button class="feature-card voice-feature" onclick="showPage('voiceCallPage')">
+                <span>📞</span>
+                <h2>Voice Call</h2>
+                <p>Speak instead of typing</p>
+            </button>
+
+
+
+            <button class="feature-card" onclick="showPage('tokenPage')">
+                <span>🎫</span>
+                <h2>Get Token</h2>
+                <p>Book procurement slot</p>
+            </button>
+
+
+            <button class="feature-card" onclick="showPage('schedulePage')">
+                <span>📅</span>
+                <h2>Schedule</h2>
+                <p>Check procurement dates</p>
+            </button>
+
+
+            <button class="feature-card" onclick="showPage('queuePage')">
+                <span>👥</span>
+                <h2>My Queue</h2>
+                <p>See your waiting position</p>
+            </button>
+
+
+            <button class="feature-card" onclick="showPage('statusPage')">
+                <span>📦</span>
+                <h2>Procurement Status</h2>
+                <p>Track your crop</p>
+            </button>
+
+
+            <button class="feature-card">
+                <span>💰</span>
+                <h2>Payment</h2>
+                <p>Check payment status</p>
+            </button>
+
+
+            <button class="feature-card" onclick="speakDashboard()">
+                <span>🎤</span>
+                <h2>Voice Help</h2>
+                <p>Listen to information</p>
+            </button>
+
+        </div>
+
+
+        <button class="back-button" onclick="showPage('homePage')">
+            Logout
+        </button>
+
+    </section>
+
+
+
+    <!-- ================= TOKEN PAGE ================= -->
+
+    <section id="tokenPage" class="page">
+
+        <div class="form-box">
+
+            <h1>🎫 Get Your Token</h1>
+
+            <label>🌾 Select Crop</label>
+
+            <select id="crop">
+                <option>Paddy</option>
+                <option>Wheat</option>
+                <option>Maize</option>
+                <option>Cotton</option>
+                <option>Other</option>
+            </select>
+
+
+            <label>⚖️ Quantity</label>
+
+            <input
+                type="number"
+                id="quantity"
+                placeholder="Enter quantity in bags"
+            >
+
+
+            <label>📍 Procurement Centre</label>
+
+            <select id="centre">
+
+                <option>Centre A</option>
+                <option>Centre B</option>
+                <option>Centre C</option>
+
+            </select>
+
+
+            <label>📅 Date</label>
+
+            <input type="date" id="procurementDate">
+
+
+            <div class="simple-help">
+                🔊 <strong>Easy Help:</strong> Enter the number of bags. Your waiting time will be estimated using the bags of farmers ahead of you.
+            </div>
+
+            <button class="main-button" onclick="generateToken()">
+                🎫 Generate Token
+            </button>
+
+            <button class="back-button"
+                    onclick="showPage('farmerDashboard')">
+                ← Back
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= TOKEN RESULT ================= -->
+
+    <section id="tokenResultPage" class="page">
+
+        <div class="token-result">
+
+            <div class="big-icon">🎫</div>
+
+            <h1>Your Token</h1>
+
+            <div class="token-number" id="tokenNumber">
+                #42
+            </div>
+
+            <h2>Token Generated Successfully!</h2>
+
+            <div class="info-card">
+
+                <p>🌾 Crop: <strong id="resultCrop">Paddy</strong></p>
+
+                <p>📍 Centre: <strong id="resultCentre">Centre A</strong></p>
+
+                <p>⚖️ Quantity: <strong id="resultQuantity">20 bags</strong></p>
+
+                <p>👥 Farmers Ahead:
+                    <strong id="resultFarmersAhead">8 farmers</strong>
+                </p>
+                <p>🌽 Bags Ahead:
+                    <strong id="resultBagsAhead">310 bags</strong>
+                </p>
+                <p>⏱️ Estimated Waiting Time:
+                    <strong id="resultWaitingTime">155 minutes</strong>
+                </p>
+                <p>🕐 Approximate Turn:
+                    <strong id="resultTurnTime">--</strong>
+                </p>
+
+            </div>
+
+
+            <button class="voice-button"
+                    onclick="speakToken()">
+                🔊 Hear Token Details
+            </button>
+
+
+            <button class="main-button"
+                    onclick="showPage('queuePage')">
+                👥 View My Queue
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SCHEDULE PAGE ================= -->
+
+    <section id="schedulePage" class="page">
+
+        <div class="content-box">
+
+            <h1>📅 Procurement Schedule</h1>
+
+            <div class="schedule-card">
+
+                <h2>🌾 Paddy</h2>
+
+                <p>📅 Monday - Saturday</p>
+
+                <p>⏰ 9:00 AM - 5:00 PM</p>
+
+                <p>📍 Centre A</p>
+
+            </div>
+
+
+            <div class="schedule-card">
+
+                <h2>🌽 Maize</h2>
+
+                <p>📅 Tuesday - Saturday</p>
+
+                <p>⏰ 9:00 AM - 5:00 PM</p>
+
+                <p>📍 Centre B</p>
+
+            </div>
+
+
+            <button class="voice-button"
+                    onclick="speakSchedule()">
+                🔊 Hear Schedule
+            </button>
+
+
+            <button class="back-button"
+                    onclick="showPage('farmerDashboard')">
+                ← Back
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= QUEUE PAGE ================= -->
+
+    <section id="queuePage" class="page">
+
+        <div class="content-box">
+
+            <h1>👥 Live Queue</h1>
+
+            <div class="queue-number" id="queueToken">
+                🎫 #42
+            </div>
+
+            <div class="queue-summary">
+                <div class="queue-metric">
+                    <span>👨‍🌾</span>
+                    <strong id="queueFarmersAhead">8</strong>
+                    <small>Farmers Ahead</small>
+                </div>
+                <div class="queue-metric">
+                    <span>🌽</span>
+                    <strong id="queueBagsAhead">310</strong>
+                    <small>Bags Ahead</small>
+                </div>
+                <div class="queue-metric">
+                    <span>⏱️</span>
+                    <strong id="queueWaitingTime">155 min</strong>
+                    <small>Waiting Time</small>
+                </div>
+            </div>
+
+            <div class="turn-time-card">
+                <span>🕐</span>
+                <div>
+                    <strong id="queueTurnTime">Approx. turn: --</strong>
+                    <small>Based on the bags ahead of you</small>
+                </div>
+            </div>
+
+            <div class="visual-status">
+                <span>🟡</span>
+                <div>
+                    <strong>Wait for your turn</strong>
+                    <p id="queueStatusText">We will notify you when your turn is near.</p>
+                </div>
+            </div>
+
+            <div class="progress-container" aria-label="Queue progress">
+                <div class="progress" id="queueProgress"></div>
+            </div>
+
+            <button class="voice-button" onclick="speakQueue()">
+                🔊 Hear Queue Position
+            </button>
+
+
+            <button class="back-button"
+                    onclick="showPage('farmerDashboard')">
+                ← Back
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- ================= VOICE CALL ASSISTANT ================= -->
+    <section id="voiceCallPage" class="page">
+        <div class="content-box voice-call-box">
+            <div class="big-icon">📞</div>
+            <h1>Farmer Voice Call</h1>
+            <p class="call-number">📞 1800-000-2026</p>
+            <p>Farmers can call this number and use the system without reading.</p>
+
+            <div class="ivr-screen">
+                <div class="ivr-step active" id="ivrStep1">
+                    <div class="ivr-icon">🌐</div>
+                    <h2>Select Language</h2>
+                    <p>తెలుగులో కొనసాగడానికి 1 నొక్కండి</p>
+                    <p>हिंदी के लिए 2 दबाएँ</p>
+                    <p>Press 3 for English</p>
+                    <div class="ivr-buttons">
+                        <button onclick="startVoiceCall('te')">1️⃣ తెలుగు</button>
+                        <button onclick="startVoiceCall('hi')">2️⃣ हिन्दी</button>
+                        <button onclick="startVoiceCall('en')">3️⃣ English</button>
+                    </div>
+                </div>
+
+                <div class="ivr-step" id="ivrStep2">
+                    <div class="ivr-icon">🎤</div>
+                    <h2 id="callQuestion">Tell us your details</h2>
+                    <p id="callInstruction">Speak after the beep.</p>
+
+                    <div class="voice-demo">
+                        <button class="mic-big" onclick="simulateFarmerVoice()">🎤</button>
+                        <span>Tap to simulate farmer speaking</span>
+                    </div>
+
+                    <div class="call-fields">
+                        <div><span>👨‍🌾 Farmer</span><strong id="callFarmer">Farmer 001</strong></div>
+                        <div><span>🌾 Crop</span><strong id="callCrop">—</strong></div>
+                        <div><span>👜 Bags</span><strong id="callBags">—</strong></div>
+                        <div><span>📍 Centre</span><strong id="callCentre">—</strong></div>
+                    </div>
+
+                    <button class="main-button" onclick="submitVoiceRequest()">✅ Send to Staff</button>
+                    <button class="back-button" onclick="resetVoiceCall()">↩️ Start Again</button>
+                </div>
+
+                <div class="ivr-step" id="ivrStep3">
+                    <div class="ivr-icon">✅</div>
+                    <h2>Request Received</h2>
+                    <p id="callConfirmation">Your details have been sent to procurement-centre staff.</p>
+                    <div class="staff-sync">👨‍💼 Staff Dashboard → 🔄 Queue Updated</div>
+                    <button class="voice-button" onclick="speakCallConfirmation()">🔊 Hear Confirmation</button>
+                </div>
+            </div>
+
+            <button class="back-button" onclick="showPage('homePage')">← Back to Home</button>
+        </div>
+    </section>
+
+    <!-- ================= STATUS PAGE ================= -->
+
+    <section id="statusPage" class="page">
+
+        <div class="content-box">
+
+            <h1>📦 Procurement Status</h1>
+
+            <div class="status-step completed">
+                <span>🎫</span>
+                <div>
+                    <h3>Token Generated</h3>
+                    <p>Completed</p>
+                </div>
+            </div>
+
+
+            <div class="status-step completed">
+                <span>🚜</span>
+                <div>
+                    <h3>Farmer Arrived</h3>
+                    <p>Completed</p>
+                </div>
+            </div>
+
+
+            <div class="status-step active-step">
+                <span>⚖️</span>
+                <div>
+                    <h3>Weighing</h3>
+                    <p>In Progress</p>
+                </div>
+            </div>
+
+
+            <div class="status-step">
+                <span>🔍</span>
+                <div>
+                    <h3>Quality Check</h3>
+                    <p>Waiting</p>
+                </div>
+            </div>
+
+
+            <div class="status-step">
+                <span>✅</span>
+                <div>
+                    <h3>Accepted</h3>
+                    <p>Waiting</p>
+                </div>
+            </div>
+
+
+            <div class="status-step">
+                <span>💰</span>
+                <div>
+                    <h3>Payment</h3>
+                    <p>Waiting</p>
+                </div>
+            </div>
+
+
+            <button class="voice-button"
+                    onclick="speakStatus()">
+                🔊 Hear Status
+            </button>
+
+
+            <button class="back-button"
+                    onclick="showPage('farmerDashboard')">
+                ← Back
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= STAFF LOGIN ================= -->
+
+    <section id="staffLogin" class="page">
+
+        <div class="login-box">
+
+            <div class="big-icon">👨‍💼</div>
+
+            <h1>Centre Staff Login</h1>
+
+            <input type="text" placeholder="Staff ID">
+
+            <input type="password" placeholder="Password">
+
+            <button class="main-button"
+                    onclick="showPage('staffDashboard')">
+                Login
+            </button>
+
+            <button class="back-button"
+                    onclick="showPage('homePage')">
+                ← Back
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= STAFF DASHBOARD ================= -->
+
+    <section id="staffDashboard" class="page">
+
+        <div class="dashboard-header">
+
+            <div>
+                <h1>👨‍💼 Centre Staff</h1>
+                <p>Procurement Centre A</p>
+            </div>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <span>👥</span>
+                <h2>42</h2>
+                <p>Today's Queue</p>
+            </div>
+
+            <div class="stat-card">
+                <span>✅</span>
+                <h2>18</h2>
+                <p>Completed</p>
+            </div>
+
+            <div class="stat-card">
+                <span>⏱️</span>
+                <h2>35 min</h2>
+                <p>Avg Waiting</p>
+            </div>
+
+        </div>
+
+
+        <div class="staff-actions">
+
+            <button onclick="alert('Calling next farmer: Token #39')">
+                📢 Call Next Farmer
+            </button>
+
+            <button onclick="alert('Procurement status updated!')">
+                🔄 Update Status
+            </button>
+
+            <button onclick="alert('Schedule updated successfully!')">
+                📅 Update Schedule
+            </button>
+
+        </div>
+
+
+        <button class="back-button"
+                onclick="showPage('homePage')">
+            Logout
+        </button>
+
+    </section>
+
+
+
+    <!-- ================= ADMIN LOGIN ================= -->
+
+    <section id="adminLogin" class="page">
+
+        <div class="login-box">
+
+            <div class="big-icon">🛡️</div>
+
+            <h1>Admin Login</h1>
+
+            <input type="text" placeholder="Admin ID">
+
+            <input type="password" placeholder="Password">
+
+            <button class="main-button"
+                    onclick="showPage('adminDashboard')">
+                Login
+            </button>
+
+            <button class="back-button"
+                    onclick="showPage('homePage')">
+                ← Back
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ADMIN DASHBOARD ================= -->
+
+    <section id="adminDashboard" class="page">
+
+        <div class="dashboard-header">
+
+            <div>
+                <h1>🛡️ Admin Dashboard</h1>
+                <p>System Overview</p>
+            </div>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <span>👨‍🌾</span>
+                <h2>1,250</h2>
+                <p>Total Farmers</p>
+            </div>
+
+            <div class="stat-card">
+                <span>📍</span>
+                <h2>18</h2>
+                <p>Active Centres</p>
+            </div>
+
+            <div class="stat-card">
+                <span>🎫</span>
+                <h2>342</h2>
+                <p>Today's Tokens</p>
+            </div>
+
+            <div class="stat-card">
+                <span>✅</span>
+                <h2>276</h2>
+                <p>Completed</p>
+            </div>
+
+        </div>
+
+
+        <div class="admin-alert">
+            ⚠️ <strong>Centre B has a high queue.</strong>
+            Consider redirecting farmers to Centre C.
+        </div>
+
+
+        <button class="back-button"
+                onclick="showPage('homePage')">
+            Logout
+        </button>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

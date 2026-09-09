@@ -1,0 +1,626 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8f1;
+    color: #183b1f;
+}
+
+/* HEADER */
+
+header {
+    background: #ffffff;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.language button {
+    border: none;
+    background: #e9f4e8;
+    padding: 10px 14px;
+    margin-left: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* PAGES */
+
+.page {
+    display: none;
+    min-height: 90vh;
+    padding: 45px 7%;
+}
+
+.page.active {
+    display: block;
+}
+
+/* HOME */
+
+.hero {
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+}
+
+.hero-icon {
+    font-size: 75px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+/* VOICE */
+
+.voice-button {
+    border: none;
+    background: #f2a900;
+    color: white;
+    padding: 18px 30px;
+    border-radius: 12px;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.voice-button:hover {
+    transform: scale(1.03);
+}
+
+.voice-small {
+    background: #f2a900;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* PORTALS */
+
+#selectPortal {
+    text-align: center;
+    margin: 50px 0 25px;
+}
+
+.portal-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.portal-card {
+    width: 280px;
+    min-height: 230px;
+    border: none;
+    border-radius: 20px;
+    padding: 30px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+    color: #183b1f;
+}
+
+.portal-card:hover {
+    transform: translateY(-5px);
+}
+
+.portal-card h2 {
+    margin: 15px 0 8px;
+}
+
+.big-icon {
+    font-size: 65px;
+}
+
+/* LOGIN */
+
+.login-box,
+.form-box,
+.content-box,
+.token-result {
+    background: white;
+    max-width: 600px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.login-box input,
+.form-box input,
+.form-box select {
+    width: 100%;
+    padding: 17px;
+    margin: 12px 0;
+    border: 2px solid #d7e2d6;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+/* BUTTONS */
+
+.main-button {
+    width: 100%;
+    padding: 17px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #2d7a3e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.back-button {
+    margin-top: 20px;
+    border: none;
+    background: transparent;
+    color: #2d7a3e;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+/* DASHBOARD */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background: white;
+    border: none;
+    border-radius: 18px;
+    padding: 30px 20px;
+    min-height: 190px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    color: #183b1f;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+}
+
+.feature-card span {
+    font-size: 50px;
+}
+
+.feature-card h2 {
+    margin: 12px 0;
+}
+
+/* FORM */
+
+.form-box {
+    text-align: left;
+}
+
+.form-box h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-box label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* TOKEN */
+
+.token-number {
+    font-size: 70px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.info-card {
+    background: #eef7ec;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+    line-height: 2;
+}
+
+/* SCHEDULE */
+
+.schedule-card {
+    background: #eef7ec;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    text-align: left;
+    line-height: 1.8;
+}
+
+/* QUEUE */
+
+.queue-number {
+    font-size: 65px;
+    font-weight: bold;
+    margin: 25px;
+}
+
+.waiting-time {
+    font-size: 24px;
+    margin: 20px;
+}
+
+.progress-container {
+    background: #ddd;
+    height: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 65%;
+    height: 100%;
+    background: #2d7a3e;
+}
+
+/* STATUS */
+
+.status-step {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px;
+    margin: 10px 0;
+    border-radius: 12px;
+    background: #eeeeee;
+    text-align: left;
+}
+
+.status-step span {
+    font-size: 35px;
+}
+
+.completed {
+    background: #e1f3e3;
+}
+
+.active-step {
+    background: #fff1c7;
+}
+
+/* STAFF / ADMIN */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.stat-card span {
+    font-size: 40px;
+}
+
+.stat-card h2 {
+    font-size: 30px;
+    margin: 10px;
+}
+
+.staff-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.staff-actions button {
+    padding: 18px;
+    border: none;
+    border-radius: 10px;
+    background: #2d7a3e;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.admin-alert {
+    background: #fff1c7;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 25px 0;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .page {
+        padding: 30px 5%;
+    }
+
+    .login-box,
+    .form-box,
+    .content-box,
+    .token-result {
+        padding: 25px;
+    }
+
+    .language button {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+/* ================= SMART QUEUE / ILLITERATE-FRIENDLY UI ================= */
+
+.simple-help {
+    margin: 15px 0;
+    padding: 16px;
+    border-radius: 12px;
+    background: #fff7dc;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.queue-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 20px 0;
+}
+
+.queue-metric {
+    background: #eef7ec;
+    border-radius: 16px;
+    padding: 18px 10px;
+    text-align: center;
+}
+
+.queue-metric span {
+    display: block;
+    font-size: 34px;
+    margin-bottom: 6px;
+}
+
+.queue-metric strong {
+    display: block;
+    font-size: 28px;
+}
+
+.queue-metric small {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.turn-time-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #e8f3ff;
+    padding: 18px;
+    border-radius: 14px;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.turn-time-card > span {
+    font-size: 38px;
+}
+
+.turn-time-card strong {
+    display: block;
+    font-size: 20px;
+}
+
+.turn-time-card small {
+    display: block;
+    margin-top: 5px;
+}
+
+.visual-status {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    margin: 15px 0 20px;
+    background: #fff1c7;
+    border-radius: 14px;
+    text-align: left;
+}
+
+.visual-status > span {
+    font-size: 38px;
+}
+
+.visual-status strong {
+    font-size: 20px;
+}
+
+.visual-status p {
+    margin: 5px 0 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+    .queue-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .queue-metric {
+        display: grid;
+        grid-template-columns: 55px 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        text-align: left;
+        padding: 14px;
+    }
+
+    .queue-metric span {
+        grid-row: 1 / span 2;
+        margin: 0;
+    }
+
+    .queue-metric strong {
+        font-size: 24px;
+    }
+
+    .queue-metric small {
+        margin: 0;
+    }
+}
+
+
+/* ================= VOICE CALL FEATURE ================= */
+.voice-call-box {
+    max-width: 720px;
+    margin: auto;
+    text-align: center;
+}
+
+.call-number {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+.ivr-screen {
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 22px;
+    border: 2px solid #ddd;
+}
+
+.ivr-step { display: none; }
+.ivr-step.active { display: block; }
+
+.ivr-icon {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.ivr-buttons {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.ivr-buttons button {
+    padding: 18px;
+    border: 0;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.voice-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.mic-big {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 0;
+    font-size: 2.7rem;
+    cursor: pointer;
+}
+
+.call-fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.call-fields div {
+    padding: 15px;
+    border-radius: 14px;
+    background: #f5f5f5;
+    text-align: left;
+}
+
+.call-fields span,
+.call-fields strong {
+    display: block;
+}
+
+.call-fields strong {
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
+
+.staff-sync {
+    margin: 20px 0;
+    padding: 18px;
+    border-radius: 15px;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    .call-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .call-number {
+        font-size: 1.5rem;
+    }
+}
